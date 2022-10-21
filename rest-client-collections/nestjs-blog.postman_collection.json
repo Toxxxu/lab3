@@ -1,0 +1,401 @@
+{
+	"id": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+	"name": "nestjs-blog",
+	"description": "",
+	"order": [
+		"954e00ec-7576-9995-d19f-7a97c737bb78"
+	],
+	"folders": [
+		{
+			"name": "admin",
+			"description": "",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"order": [
+				"2db8e89e-7c2c-fc29-b405-734b501ca600"
+			],
+			"owner": 0,
+			"folder": "f5a1b1f7-d7cd-9d85-3530-1a08c14a6717",
+			"folders_order": [],
+			"id": "22dd74fd-400d-6dd7-64ec-03d080fe3865"
+		},
+		{
+			"name": "auth",
+			"description": "",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"order": [
+				"80b0b17e-11db-2e20-d0df-b21c2f7d1014",
+				"f0bc447c-c06e-da05-e1dc-4130ee75429c",
+				"411fc427-7e99-fd1e-5b4c-9e9daf79f9e6"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "077f59be-0b37-689c-202e-2619b7620fb9"
+		},
+		{
+			"id": "4cece88d-9682-c136-8e8f-248ef0bc0f42",
+			"name": "likes",
+			"description": "",
+			"order": [
+				"8d5e9ad9-9ee5-7b13-03ec-3a84361079ca",
+				"9a0b936d-003d-7408-df2b-3c88ff071491",
+				"a275d004-7adf-c9d8-705f-33a64a07146d"
+			],
+			"folders_order": [],
+			"owner": 0,
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74"
+		},
+		{
+			"id": "f5a1b1f7-d7cd-9d85-3530-1a08c14a6717",
+			"name": "posts",
+			"description": "",
+			"order": [
+				"192dfc0c-e641-fde8-b69d-24d42d67dc78",
+				"bc472ccf-3605-a1de-4cb2-c2795458df3c"
+			],
+			"folders_order": [
+				"22dd74fd-400d-6dd7-64ec-03d080fe3865",
+				"54329d90-1ee0-a26e-7bd9-f05465e8f187"
+			],
+			"owner": 0,
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74"
+		},
+		{
+			"name": "user",
+			"description": "",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"order": [
+				"379cebaf-20a1-9259-da95-a2d33efc6787",
+				"3347a729-4f5b-9ced-b0fd-3d711dab254a",
+				"d509b599-be4f-5b2c-bb14-a124778bec3a"
+			],
+			"owner": 0,
+			"folder": "f5a1b1f7-d7cd-9d85-3530-1a08c14a6717",
+			"folders_order": [],
+			"id": "54329d90-1ee0-a26e-7bd9-f05465e8f187"
+		}
+	],
+	"folders_order": [
+		"f5a1b1f7-d7cd-9d85-3530-1a08c14a6717",
+		"4cece88d-9682-c136-8e8f-248ef0bc0f42",
+		"077f59be-0b37-689c-202e-2619b7620fb9"
+	],
+	"timestamp": 0,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "192dfc0c-e641-fde8-b69d-24d42d67dc78",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/auth/me",
+			"folder": "f5a1b1f7-d7cd-9d85-3530-1a08c14a6717",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\ntests['response json contains headers'] = _.has(responseJSON, 'headers');\ntests['response json contains args'] = _.has(responseJSON, 'args');\ntests['response json contains url'] = _.has(responseJSON, 'url');\n\ntests['args key contains argument passed as url parameter'] = ('test' in responseJSON.args);\ntests['args passed via request url params has value \"123\"'] = (_.get(responseJSON, 'args.test') === \"123\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1665831344485,
+			"name": "getAll",
+			"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested.",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"responses": []
+		},
+		{
+			"id": "2db8e89e-7c2c-fc29-b405-734b501ca600",
+			"name": "getNotApprovedAdmin",
+			"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested.",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"method": "GET",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"pathVariables": {},
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\ntests['response json contains headers'] = _.has(responseJSON, 'headers');\ntests['response json contains args'] = _.has(responseJSON, 'args');\ntests['response json contains url'] = _.has(responseJSON, 'url');\n\ntests['args key contains argument passed as url parameter'] = ('test' in responseJSON.args);\ntests['args passed via request url params has value \"123\"'] = (_.get(responseJSON, 'args.test') === \"123\");",
+			"preRequestScript": "",
+			"url": "http://localhost:3000/posts",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"folder": "22dd74fd-400d-6dd7-64ec-03d080fe3865",
+			"isFromCollection": true,
+			"collectionRequestId": "192dfc0c-e641-fde8-b69d-24d42d67dc78"
+		},
+		{
+			"id": "3347a729-4f5b-9ced-b0fd-3d711dab254a",
+			"name": "edit",
+			"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested.",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"method": "PUT",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"pathVariables": {},
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\ntests['response json contains headers'] = _.has(responseJSON, 'headers');\ntests['response json contains args'] = _.has(responseJSON, 'args');\ntests['response json contains url'] = _.has(responseJSON, 'url');\n\ntests['args key contains argument passed as url parameter'] = ('test' in responseJSON.args);\ntests['args passed via request url params has value \"123\"'] = (_.get(responseJSON, 'args.test') === \"123\");",
+			"preRequestScript": "",
+			"url": "http://localhost:3000/posts/123",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"folder": "54329d90-1ee0-a26e-7bd9-f05465e8f187"
+		},
+		{
+			"id": "379cebaf-20a1-9259-da95-a2d33efc6787",
+			"name": "create",
+			"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested.",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"method": "POST",
+			"headers": "Content-Type: application/json",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\n\t\"title\":\"Hello\",\n\t\"description\":\"Test Desc\"\n}",
+			"pathVariables": {},
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\ntests['response json contains headers'] = _.has(responseJSON, 'headers');\ntests['response json contains args'] = _.has(responseJSON, 'args');\ntests['response json contains url'] = _.has(responseJSON, 'url');\n\ntests['args key contains argument passed as url parameter'] = ('test' in responseJSON.args);\ntests['args passed via request url params has value \"123\"'] = (_.get(responseJSON, 'args.test') === \"123\");",
+			"preRequestScript": "",
+			"url": "http://localhost:3000/posts",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"collection_id": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"folder": "54329d90-1ee0-a26e-7bd9-f05465e8f187"
+		},
+		{
+			"id": "411fc427-7e99-fd1e-5b4c-9e9daf79f9e6",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/auth/register",
+			"folder": "f5a1b1f7-d7cd-9d85-3530-1a08c14a6717",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\ntests['response json contains headers'] = _.has(responseJSON, 'headers');\ntests['response json contains args'] = _.has(responseJSON, 'args');\ntests['response json contains url'] = _.has(responseJSON, 'url');\n\ntests['args key contains argument passed as url parameter'] = ('test' in responseJSON.args);\ntests['args passed via request url params has value \"123\"'] = (_.get(responseJSON, 'args.test') === \"123\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1665831889162,
+			"name": "register",
+			"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested.",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\":\"test@test.com\",\n\t\"username\":\"tester\",\n\t\"password\":\"pass1!2Qw\",\n\t\"confirmPassword\":\"pass1!2Qw\"\n}"
+		},
+		{
+			"id": "80b0b17e-11db-2e20-d0df-b21c2f7d1014",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/auth/me",
+			"folder": "f5a1b1f7-d7cd-9d85-3530-1a08c14a6717",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\ntests['response json contains headers'] = _.has(responseJSON, 'headers');\ntests['response json contains args'] = _.has(responseJSON, 'args');\ntests['response json contains url'] = _.has(responseJSON, 'url');\n\ntests['args key contains argument passed as url parameter'] = ('test' in responseJSON.args);\ntests['args passed via request url params has value \"123\"'] = (_.get(responseJSON, 'args.test') === \"123\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1665831680155,
+			"name": "profile",
+			"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested.",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\":\"test@test.com\",\n\t\"password\":\"pass\"\n}"
+		},
+		{
+			"id": "8d5e9ad9-9ee5-7b13-03ec-3a84361079ca",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/likes",
+			"folder": "4cece88d-9682-c136-8e8f-248ef0bc0f42",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\ntests['response json contains headers'] = _.has(responseJSON, 'headers');\ntests['response json contains args'] = _.has(responseJSON, 'args');\ntests['response json contains url'] = _.has(responseJSON, 'url');\n\ntests['args key contains argument passed as url parameter'] = ('test' in responseJSON.args);\ntests['args passed via request url params has value \"123\"'] = (_.get(responseJSON, 'args.test') === \"123\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1664553211540,
+			"name": "getAll",
+			"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested.",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"responses": []
+		},
+		{
+			"id": "954e00ec-7576-9995-d19f-7a97c737bb78",
+			"name": "GET Index",
+			"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested.",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"method": "GET",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\ntests['response json contains headers'] = _.has(responseJSON, 'headers');\ntests['response json contains args'] = _.has(responseJSON, 'args');\ntests['response json contains url'] = _.has(responseJSON, 'url');\n\ntests['args key contains argument passed as url parameter'] = ('test' in responseJSON.args);\ntests['args passed via request url params has value \"123\"'] = (_.get(responseJSON, 'args.test') === \"123\");",
+			"preRequestScript": "",
+			"url": "http://localhost:3000/",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "7723d8a3-8828-4015-ffb3-0497656cfc74"
+		},
+		{
+			"id": "9a0b936d-003d-7408-df2b-3c88ff071491",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/likes",
+			"folder": "4cece88d-9682-c136-8e8f-248ef0bc0f42",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\ntests['response json contains headers'] = _.has(responseJSON, 'headers');\ntests['response json contains args'] = _.has(responseJSON, 'args');\ntests['response json contains url'] = _.has(responseJSON, 'url');\n\ntests['args key contains argument passed as url parameter'] = ('test' in responseJSON.args);\ntests['args passed via request url params has value \"123\"'] = (_.get(responseJSON, 'args.test') === \"123\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1664553205691,
+			"name": "create",
+			"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested.",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"responses": [],
+			"rawModeData": "{\n\t\"title\":\"Hello\",\n\t\"description\":\"Test Desc\"\n}"
+		},
+		{
+			"id": "a275d004-7adf-c9d8-705f-33a64a07146d",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/likes/123",
+			"folder": "4cece88d-9682-c136-8e8f-248ef0bc0f42",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\ntests['response json contains headers'] = _.has(responseJSON, 'headers');\ntests['response json contains args'] = _.has(responseJSON, 'args');\ntests['response json contains url'] = _.has(responseJSON, 'url');\n\ntests['args key contains argument passed as url parameter'] = ('test' in responseJSON.args);\ntests['args passed via request url params has value \"123\"'] = (_.get(responseJSON, 'args.test') === \"123\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1664553200371,
+			"name": "delete",
+			"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested.",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"responses": []
+		},
+		{
+			"id": "bc472ccf-3605-a1de-4cb2-c2795458df3c",
+			"name": "getById",
+			"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested.",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"method": "GET",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\ntests['response json contains headers'] = _.has(responseJSON, 'headers');\ntests['response json contains args'] = _.has(responseJSON, 'args');\ntests['response json contains url'] = _.has(responseJSON, 'url');\n\ntests['args key contains argument passed as url parameter'] = ('test' in responseJSON.args);\ntests['args passed via request url params has value \"123\"'] = (_.get(responseJSON, 'args.test') === \"123\");",
+			"preRequestScript": "",
+			"url": "http://localhost:3000/posts/123",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"folder": "f5a1b1f7-d7cd-9d85-3530-1a08c14a6717"
+		},
+		{
+			"id": "d509b599-be4f-5b2c-bb14-a124778bec3a",
+			"name": "delete",
+			"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested.",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"method": "DELETE",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"pathVariables": {},
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\ntests['response json contains headers'] = _.has(responseJSON, 'headers');\ntests['response json contains args'] = _.has(responseJSON, 'args');\ntests['response json contains url'] = _.has(responseJSON, 'url');\n\ntests['args key contains argument passed as url parameter'] = ('test' in responseJSON.args);\ntests['args passed via request url params has value \"123\"'] = (_.get(responseJSON, 'args.test') === \"123\");",
+			"preRequestScript": "",
+			"url": "http://localhost:3000/posts/123",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"folder": "54329d90-1ee0-a26e-7bd9-f05465e8f187"
+		},
+		{
+			"id": "f0bc447c-c06e-da05-e1dc-4130ee75429c",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/auth/login",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "7723d8a3-8828-4015-ffb3-0497656cfc74",
+			"data": [],
+			"dataMode": "raw",
+			"name": "login",
+			"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested.",
+			"descriptionFormat": "html",
+			"time": 1665831435132,
+			"version": 2,
+			"responses": [],
+			"tests": "var responseJSON;\n\ntry { \n    responseJSON = JSON.parse(responseBody); \n    tests['response is valid JSON'] = true;\n}\ncatch (e) { \n    responseJSON = {}; \n    tests['response is valid JSON'] = false;\n}\n\ntests['response json contains headers'] = _.has(responseJSON, 'headers');\ntests['response json contains args'] = _.has(responseJSON, 'args');\ntests['response json contains url'] = _.has(responseJSON, 'url');\n\ntests['args key contains argument passed as url parameter'] = ('test' in responseJSON.args);\ntests['args passed via request url params has value \"123\"'] = (_.get(responseJSON, 'args.test') === \"123\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "077f59be-0b37-689c-202e-2619b7620fb9",
+			"rawModeData": "{\n\t\"email\":\"test@test.com\",\n\t\"password\":\"pass\"\n}"
+		}
+	]
+}
